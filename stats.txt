@@ -1,0 +1,35 @@
+Identifying
+game id
+season
+date
+team
+opponent
+home
+Target
+win
+Scoring
+- average scoring margin *
+- offensive efficiency
+-pace (number of possesions per 48 minutes)
+Shooting
+- effective field goal percentage*
+- true shooting percentage*
+- Three Point Rate*
+- FTA per FGA*
+Rebounding
+- Offensive Rebounding %
+- Defensive Rebounding % *
+- Total Rebounding % (Rebound Rate)
+Blocks and Steals
+- Block % *
+- Steals per Defensive Play *
+Assists and Turnovers
+Assist / Turnover Ratio*
+Shooting Defense
+Opponent Effective Field Goal % *
+Opponent True Shooting % *
+Opponent turnover per possession *
+Rolling
+Rest days *
+Last 5 win percentage *
+win streak (-5 to 5) *

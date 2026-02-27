@@ -1,0 +1,34 @@
+For the csv file:
+Columns:
+Identifiers
+- game_id
+- season
+- date
+- team
+- opponent
+TARGET Varibale
+- win/loss (1=win, 0=loss)
+Team Statistics
+-fg_percentage
+-fg_pct
+-three_pt_pct
+-ft_pct
+-assist_to_turnover
+-rebounds
+-off_rating
+-def_rating
+-pace
+-streak
+Opponent Statistics
+-opp_fg_pct
+-opp_assist_to_turnover
+-opp_def_rating
+Rolling Features
+-last_5_win_pct
+-last_5_fg_pct
+-rest_days
+
+
+
+
+

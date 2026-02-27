@@ -1,0 +1,143 @@
+Step 1: Identify Required Data Sources
+
+Determine which ESPN API endpoints contain the statistics you need
+Identify what team statistics are available (offensive ratings, defensive ratings, field goal percentages, rebounds, turnovers, pace, etc.)
+Determine what game-level data is available (scores, home/away status, dates)
+List out all statistics you want to track for correlation analysis
+
+Step 2: Design Your Data Structure
+
+Plan your CSV file structure with columns for: win/loss outcome, team name, opponent name, home/away indicator, date, and all statistical categories
+Decide whether you want season averages leading up to each game or specific game statistics
+Determine if you'll create one master CSV or separate files per team
+Plan how to handle the target variable (win = 1, loss = 0 for easier correlation)
+
+Step 3: Fetch Historical Game Data
+
+Make API requests to get the current season's schedule for all teams
+Store game results including dates, opponents, scores, and outcomes
+Ensure you have a complete list of all games played so far this season
+
+Step 4: Fetch Team Statistics
+
+For each game in your dataset, collect the team's statistics leading up to that game
+Decide on a window: will you use season averages up to that point, last 10 games, or last 5 games?
+Collect both the team's own statistics and their opponent's statistics
+Include contextual features like home/away, rest days, back-to-back games
+
+Step 5: Build Your Dataset
+
+For each team, create rows where each row represents one game they played
+Populate the first column with the outcome (win or loss)
+Fill in all statistical columns with the appropriate values from that timepoint
+Include both offensive statistics (how the team performs) and defensive statistics (how they defend)
+Save to CSV format
+
+Phase 2: Correlation Analysis
+Step 6: Prepare Data for Analysis
+
+Load your CSV file into a data analysis structure
+Convert categorical variables to numerical (win/loss to 1/0, home/away to 1/0)
+Handle any missing data through removal or imputation
+Ensure all columns are in the correct numerical format
+
+Step 7: Calculate Correlations for Each Team
+
+For each team's dataset, compute the correlation coefficient between each statistic and the win/loss outcome
+Use Pearson correlation or Spearman rank correlation depending on data distribution
+Store results showing which statistics have the strongest positive or negative correlation with winning
+
+Step 8: Identify Key Statistics
+
+Rank all statistics by their correlation strength (absolute value)
+Identify which statistics are most predictive of wins across all teams
+Note if certain statistics are more important for specific teams
+Look for unexpected correlations that might provide insights
+
+Step 9: Analyze League-Wide Patterns
+
+Aggregate correlation results across all teams
+Identify statistics that consistently correlate with winning across the league
+Find statistics that show high variance (important for some teams, not others)
+Create a ranked list of the most important predictive features
+
+Phase 3: Team Performance Evaluation
+Step 10: Calculate Current Team Performance in Key Statistics
+
+For each team, calculate their current season averages in the high-correlation statistics
+Rank teams in each important statistical category
+Identify which teams excel or struggle in specific areas
+Create team profiles showing strengths and weaknesses
+
+Step 11: Establish League Benchmarks
+
+Calculate league averages for all key statistics
+Determine standard deviations to understand what constitutes "good" or "bad" performance
+Classify teams as above average, average, or below average in each category
+Identify elite performers and struggling teams in each statistical area
+
+Phase 4: Matchup Prediction Framework
+Step 12: Design Matchup Comparison System
+
+Create a method to compare two teams' statistics in the most predictive categories
+Weight statistics by their correlation strength to wins
+Consider both teams' offensive capabilities and defensive capabilities
+Factor in home court advantage as a separate variable
+
+Step 13: Build Prediction Logic
+
+For any given matchup, compare Team A's offensive statistics against Team B's defensive statistics
+Compare Team B's offensive statistics against Team A's defensive statistics
+Calculate an overall score or probability based on the weighted comparisons
+Incorporate contextual factors (home/away, recent performance trends, rest days)
+
+Step 14: Create Confidence Metrics
+
+Develop a system to express confidence in predictions
+Higher confidence when statistical advantages are clear and consistent
+Lower confidence when teams are evenly matched or have contradictory indicators
+Use correlation strength as a guide for how much to trust each statistic
+
+Phase 5: Validation & Refinement
+Step 15: Backtest Your System
+
+Test your prediction logic on historical games you already have data for
+Calculate accuracy rate of predictions
+Identify where the system performs well and where it struggles
+Look for patterns in incorrect predictions
+
+Step 16: Refine Feature Selection
+
+Based on backtesting, consider removing low-value statistics
+Experiment with different weighting schemes for high-correlation stats
+Test whether combining statistics creates better predictive power
+Consider adding interaction terms (e.g., pace multiplied by shooting percentage)
+
+Step 17: Implement Continuous Updates
+
+Create a system to regularly fetch new game results and statistics
+Update your CSV files with new data as games are played
+Recalculate correlations periodically to see if patterns shift
+Adjust team performance rankings as the season progresses
+
+Phase 6: Output & Usability
+Step 18: Design Output Format
+
+Decide how to present predictions (probability percentages, simple win/loss, confidence scores)
+Create summary reports showing which team has advantages in which categories
+Display key statistics that drive the prediction
+Show historical head-to-head performance if available
+
+Step 19: Create Workflow for Making Predictions
+
+Define the steps to input an upcoming matchup
+Pull current statistics for both teams
+Run comparison through your weighted correlation model
+Output prediction with supporting evidence and confidence level
+
+Step 20: Document and Test
+
+Document all assumptions made in your model
+Note limitations (doesn't account for injuries, roster changes, motivation factors)
+Test with upcoming games and track accuracy over time
+Prepare to iterate and improve based on real-world results
