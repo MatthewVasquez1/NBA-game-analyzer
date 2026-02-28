@@ -1,4 +1,4 @@
-NBA GAME PREDICTOR
+# NBA GAME PREDICTOR
 
 Pulls in NBA game data from ESPN API's and inserts data into a model to predict NBA game results
 
