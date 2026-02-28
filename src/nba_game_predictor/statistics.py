@@ -1,21 +1,24 @@
 import requests
 import pandas as pd
 import os
+from nba_game_predictor.const import ESPN_TEAMS_API
 
 class Statistics():
     
     
     def __init__(self):
-        self.team_ids = self.get_team_ids()
+        data = self.call_api(ESPN_TEAMS_API)
+        self.team_ids = self.get_team_ids(data)
     
     
     
-    
+    def call_api(self, url):
+        response = requests.get(url)
+        data=response.json()
+        return data
+        
     #Creates a list with each entry as a dictionary. Key is the team, value is the team id
-    def get_team_ids(self):
-        teams_url = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams"
-        response = requests.get(teams_url)
-        data = response.json()
+    def get_team_ids(self,data):
         team_names = []
         for team in data['sports'][0]['leagues'][0]['teams']:
             name = team['team']['displayName']
