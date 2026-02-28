@@ -6,7 +6,7 @@ import pandas as pd
 # int(statistics.team_ids[0]["Team Name"])
 
 #ADDS GAME IDS
-atlanta_hawks_game_ids_list = statistics.get_game_ids(int(statistics.team_ids[0]["Atlanta Hawks"]))
+# atlanta_hawks_game_ids_list = statistics.get_game_ids(int(statistics.team_ids[0]["Atlanta Hawks"]))
 # statistics.add_to_csv(atlanta_hawks_game_ids_list,"game_id",next(iter(statistics.team_ids[0].keys())))
 
 #ADD SEASON
@@ -30,5 +30,6 @@ atlanta_hawks_game_ids_list = statistics.get_game_ids(int(statistics.team_ids[0]
 # statistics.add_to_csv(list=home,statistic="home",team=next(iter(statistics.team_ids[0].keys())))
 
 #Get Average Scoring Marigin
-avg_scoring_margin = statistics.get_average_scoring_margin(1,atlanta_hawks_game_ids_list)
-statistics.add_to_csv(list=avg_scoring_margin,statistic="scoring_margin", team=next(iter(statistics.team_ids[0].keys())))
+# avg_scoring_margin = statistics.get_average_scoring_margin(1,atlanta_hawks_game_ids_list)
+# statistics.add_to_csv(list=avg_scoring_margin,statistic="scoring_margin", team=next(iter(statistics.team_ids[0].keys())))
+
