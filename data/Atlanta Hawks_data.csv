@@ -59,7 +59,7 @@ game_id,season,date,opponent,result,home,scoring_margin
 401810660,2025-26,2026-02-21,Miami Heat,0.0,1,-1.64
 401810673,2025-26,2026-02-22,Brooklyn Nets,1.0,1,-1.42
 401810687,2025-26,2026-02-25,Washington Wizards,,1,-1.05
-401810705,2025-26,2026-02-27,Washington Wizards,,1,
+401810705,2025-26,2026-02-27,Washington Wizards,,1,-0.54
 401810728,2025-26,2026-03-01,Portland Trail Blazers,,1,
 401810752,2025-26,2026-03-05,Milwaukee Bucks,,0,
 401810772,2025-26,2026-03-08,Philadelphia 76ers,,1,
