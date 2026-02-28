@@ -10,7 +10,6 @@ build/
 .coverage
 htmlcov/
 .pytest_cache/
-tests/__pycache__/
 
 # VS Code
 .vscode/*
