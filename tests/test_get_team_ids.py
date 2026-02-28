@@ -1,8 +1,6 @@
 import json
 import logging
-import aiofiles
 from nba_game_predictor.statistics import Statistics
-import nba_game_predictor.const
 
 _LOGGER = logging.getLogger(__name__)
 def test_get_team_ids_returns_list_of_dicts():
