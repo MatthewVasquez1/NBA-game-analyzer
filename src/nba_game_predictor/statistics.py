@@ -63,7 +63,7 @@ class Statistics():
             list.append(data['events'][0]['season']['displayName'])
         return list
     
-    def get_dates(self,data):
+    def parse_dates(self,data):
         game_dates=[]
         for game in data['events']:
             date = str(game['date'])
