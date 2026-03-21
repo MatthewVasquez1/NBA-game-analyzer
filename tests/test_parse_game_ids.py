@@ -20,6 +20,6 @@ def test_parse_game_ids_returns_list_of_dicts():
         # Assert list with 82 games with first, last, and middle game ids
     assert isinstance(result, list)
     assert len(result) == 82
-    assert 401809935 in result
-    assert 401810424 in result
-    assert 401811044 in result
+    assert "401809935" in result
+    assert "401810424" in result
+    assert "401811044" in result
