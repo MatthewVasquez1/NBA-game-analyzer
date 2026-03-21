@@ -73,7 +73,7 @@ class Statistics():
     def get_team(self,team_id):
         pass
     
-    def get_opponent(self,team_id, data):
+    def parse_opponent(self,team_id, data):
         opp_list = []
         for game in data['events']:
             competitors = game['competitions'][0]['competitors']

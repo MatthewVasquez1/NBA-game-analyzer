@@ -55,8 +55,8 @@ years = statistics.parse_season(schedule_data)
 
 
 dates = statistics.parse_dates(schedule_data)
-print(dates)
+# print(dates)
 
 
-# opponents = statistics.get_opponent(1,year_data)
-# print(opponents)
+opponents = statistics.parse_opponent(1,schedule_data)
+print(opponents)
