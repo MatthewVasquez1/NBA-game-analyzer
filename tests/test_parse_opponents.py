@@ -15,7 +15,7 @@ def test_parse_opponents_returns_list_of_dicts():
         _LOGGER.warning("test_event(): Error with test file '%s'", "tests/test_data/nba_schedule.json")
         assert False
     
-    result = statistics.parse_opponents(1,data)
+    result = statistics.parse_opponent(1,data)
     
         # Assert list with 82 games with first, last, and middle game ids
     assert isinstance(result, list)
