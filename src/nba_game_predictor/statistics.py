@@ -29,7 +29,7 @@ class Statistics():
     
     
     #returns a list of all the game ids for the inputed team
-    def get_game_ids(self,data):
+    def parse_game_ids(self,data):
         game_ids=[]
         for game in data['events']:
             game_ids.append(game['id'])
