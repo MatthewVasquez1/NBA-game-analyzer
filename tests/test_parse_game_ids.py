@@ -21,5 +21,5 @@ def test_parse_game_ids_returns_list_of_dicts():
     assert isinstance(result, list)
     assert len(result) == 82
     assert "401809935" == result[0]
-    assert "401704816" in result[14]
+    assert "401810106" == result[14]
     assert "401811044" == result[81]
