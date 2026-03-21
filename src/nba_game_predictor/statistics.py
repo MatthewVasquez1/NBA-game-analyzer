@@ -57,7 +57,7 @@ class Statistics():
         pass
 
 #Identifiers   
-    def get_season(self,data):
+    def parse_season(self,data):
         list=[]
         for x in range(82):
             list.append(data['events'][0]['season']['displayName'])

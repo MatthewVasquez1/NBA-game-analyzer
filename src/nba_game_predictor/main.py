@@ -43,17 +43,19 @@ team_ids = statistics.parse_team_ids(data)
 
 # #New get game ids
 espn_schedule_api_with_id = ESPN_SCHEDULE_API.replace("{team_id}","1")
-game_id_data = statistics.call_api(espn_schedule_api_with_id)
-hawks_game_ids = statistics.parse_game_ids(game_id_data)
-print(hawks_game_ids)
+schedule_data = statistics.call_api(espn_schedule_api_with_id)
+hawks_game_ids = statistics.parse_game_ids(schedule_data)
+# print(hawks_game_ids)
 
 #New get season
 # adjusted_espn_year_api = ESPN_YEAR_API.replace("{team_id}","1").replace("{year}","2025")
 # year_data = statistics.call_api(adjusted_espn_year_api)
-# years = statistics.get_season(year_data)
+years = statistics.parse_season(schedule_data)
+print(years)
 
 
-# dates = statistics.get_dates(year_data)
+dates = statistics.get_dates(schedule_data)
+# print(dates)
 
 
 # opponents = statistics.get_opponent(1,year_data)

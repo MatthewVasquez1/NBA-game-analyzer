@@ -3,7 +3,7 @@ import logging
 from nba_game_predictor.statistics import Statistics
 
 _LOGGER = logging.getLogger(__name__)
-def test_parse_game_ids_returns_list_of_dicts():
+def test_parse_season_returns_list_of_dicts():
     statistics = Statistics()
     """ Use file w/ test json and loop through test cases and compare to expected results """
 
@@ -15,11 +15,11 @@ def test_parse_game_ids_returns_list_of_dicts():
         _LOGGER.warning("test_event(): Error with test file '%s'", "tests/test_data/nba_schedule.json")
         assert False
     
-    result = statistics.parse_game_ids(data)
+    result = statistics.parse_season(data)
     
         # Assert list with 82 games with first, last, and middle game ids
     assert isinstance(result, list)
     assert len(result) == 82
-    assert "401809935" == result[0]
-    assert "401704816" in result[14]
-    assert "401811044" == result[81]
+    assert "2025-26" == result[0]
+    assert "2025-26" == result[41]
+    assert "2025-26" == result[81]
