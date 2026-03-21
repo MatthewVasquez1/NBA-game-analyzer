@@ -1,6 +1,7 @@
 from statistics import Statistics
 statistics = Statistics()
 import pandas as pd
+from nba_game_predictor.const import ESPN_TEAMS_API,ESPN_SCHEDULE_API, ESPN_YEAR_API
 
 #HOW TO GET TEAM ID
 # int(statistics.team_ids[0]["Team Name"])
@@ -33,3 +34,26 @@ import pandas as pd
 # avg_scoring_margin = statistics.get_average_scoring_margin(1,atlanta_hawks_game_ids_list)
 # statistics.add_to_csv(list=avg_scoring_margin,statistic="scoring_margin", team=next(iter(statistics.team_ids[0].keys())))
 
+
+#FIXING APIS
+
+data = statistics.call_api(ESPN_TEAMS_API)
+team_ids = statistics.parse_team_ids(data)
+print(team_ids)
+
+# #New get game ids
+# espn_schedule_api_with_id = ESPN_SCHEDULE_API.replace("{team_id}","1")
+# game_id_data = statistics.call_api(espn_schedule_api_with_id)
+# hawks_game_ids = statistics.get_game_ids(game_id_data)
+
+#New get season
+# adjusted_espn_year_api = ESPN_YEAR_API.replace("{team_id}","1").replace("{year}","2025")
+# year_data = statistics.call_api(adjusted_espn_year_api)
+# years = statistics.get_season(year_data)
+
+
+# dates = statistics.get_dates(year_data)
+
+
+# opponents = statistics.get_opponent(1,year_data)
+# print(opponents)

@@ -7,8 +7,7 @@ class Statistics():
     
     
     def __init__(self):
-        data = self.call_api(ESPN_TEAMS_API)
-        self.team_ids = self.get_team_ids(data)
+        pass
     
     
     
@@ -18,7 +17,7 @@ class Statistics():
         return data
         
     #Creates a list with each entry as a dictionary. Key is the team, value is the team id
-    def get_team_ids(self,data):
+    def parse_team_ids(self,data):
         team_names = []
         for team in data['sports'][0]['leagues'][0]['teams']:
             name = team['team']['displayName']
@@ -30,10 +29,7 @@ class Statistics():
     
     
     #returns a list of all the game ids for the inputed team
-    def get_game_ids(self,team_id):
-        schedule_url = f"https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{team_id}/schedule"
-        response = requests.get(schedule_url)
-        data = response.json()
+    def get_game_ids(self,data):
         game_ids=[]
         for game in data['events']:
             game_ids.append(game['id'])
@@ -61,20 +57,14 @@ class Statistics():
         pass
 
 #Identifiers   
-    def get_season(self,team_id,year):
+    def get_season(self,data):
         list=[]
-        schedule_url = f"https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{team_id}/schedule?season={year}"
-        response = requests.get(schedule_url)
-        data=response.json()
         for x in range(82):
             list.append(data['events'][0]['season']['displayName'])
         return list
     
-    def get_dates(self,team_id,year):
+    def get_dates(self,data):
         game_dates=[]
-        schedule_url = f"https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{team_id}/schedule?season={year}"
-        response = requests.get(schedule_url)
-        data = response.json()
         for game in data['events']:
             date = str(game['date'])
             game_dates.append(date.split('T')[0])
@@ -83,11 +73,8 @@ class Statistics():
     def get_team(self,team_id):
         pass
     
-    def get_opponent(self, team_id, year):
+    def get_opponent(self,team_id, data):
         opp_list = []
-        schedule_url = f"https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{team_id}/schedule?season={year}"
-        response = requests.get(schedule_url)
-        data = response.json()
         for game in data['events']:
             competitors = game['competitions'][0]['competitors']
             for competitor in competitors:
